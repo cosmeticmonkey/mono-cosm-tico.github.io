@@ -1,0 +1,196 @@
+/* Reset de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo del cielo */
+.sky {
+    background: linear-gradient(to bottom, #cce7ff, #3e83b3);
+    height: 80%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+/* Suelo nevado */
+.ground {
+    background: #f3f4f6;
+    height: 20%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Mensaje superior de Navidad */
+.message-top {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 10;
+}
+
+.message-top h2 {
+    font-size: 3rem;
+    color: #ffdd57;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.message-top p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Árbol de Navidad */
+.tree {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+/* Partes del árbol */
+.tree-top, .tree-middle, .tree-bottom {
+    width: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    margin-left: -50px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tree-top {
+    border-bottom: 100px solid #3b8c34;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.tree-middle {
+    border-bottom: 130px solid #2c6e28;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.tree-bottom {
+    border-bottom: 160px solid #1d541f;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estrella en la cima del árbol */
+.tree-star {
+    font-size: 5rem;
+    position: absolute;
+    top: -70px;
+    left: 10%;
+    animation: starAnimation 3s infinite;
+}
+
+@keyframes starAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Papá Noel y su reno */
+.santa-container {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    z-index: 5;
+}
+
+.santa, .reindeer {
+    font-size: 4rem;
+}
+
+.reindeer {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    font-size: 4.5rem;
+}
+
+/* Gente alrededor del árbol */
+.people-container {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+}
+
+/* Mejoramos la forma de las personas */
+.person {
+    width: 40px;
+    height: 90px;
+    background-color: #6b4f36; /* Color de la ropa */
+    border-radius: 20px;
+    position: relative;
+    animation: movePeople 10s ease-in-out infinite;
+}
+
+.person::after {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #ffcc00; /* Cabeza de la persona */
+    border: 3px solid #6b4f36; /* Detalle de cabello */
+}
+
+/* Animación para mover a las personas alrededor del árbol */
+@keyframes movePeople {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    25% {
+        transform: translateY(-20px) translateX(15px) rotate(10deg);
+    }
+    50% {
+        transform: translateY(0) translateX(30px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-20px) translateX(15px) rotate(-10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+}
+
+/* Efectos de copos de nieve */
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    animation: snowAnimation 10s linear infinite;
+}
+
+@keyframes snowAnimation {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
